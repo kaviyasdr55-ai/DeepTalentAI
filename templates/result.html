@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Talent Assessment Results</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>DeepTalent <span>AI</span></h1>
+
+    <h2>Talent Assessment Results</h2>
+
+    <div class="result-card">
+
+        <h3>Selected Job Role</h3>
+
+        <p>{{ selected_role }}</p>
+
+        <h3>Talent Match Score</h3>
+
+        <div class="score">{{ score }}%</div>
+
+        <p>Based on the selected role's listed skills.</p>
+
+    </div>
+
+    <div class="result-card">
+
+        <h3>Identified Skills</h3>
+
+        {% for skill in candidate_skills %}
+
+            <span class="tag">{{ skill }}</span>
+
+        {% else %}
+
+            <p>No recognized skills found.</p>
+
+        {% endfor %}
+
+    </div>
+
+    <div class="result-card">
+
+        <h3>Matched Skills</h3>
+
+        {% for skill in matched %}
+
+            <span class="tag green">{{ skill }}</span>
+
+        {% else %}
+
+            <p>No matching skills found.</p>
+
+        {% endfor %}
+
+    </div>
+
+    <div class="result-card">
+
+        <h3>Missing Skills</h3>
+
+        {% for skill in missing %}
+
+            <span class="tag red">{{ skill }}</span>
+
+        {% else %}
+
+            <p>All listed skills matched.</p>
+
+        {% endfor %}
+
+    </div>
+
+    <div class="result-card">
+
+        <h3>Recommended Career Roles</h3>
+
+        {% for item in recommendations %}
+
+            <p>
+                <strong>{{ item.role }}</strong>
+                - {{ item.score }}% match
+            </p>
+
+        {% endfor %}
+
+    </div>
+
+    <a href="/">Analyze Another Resume</a>
+
+</div>
+
+</body>
+</html>

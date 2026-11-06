@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DeepTalent AI</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>DeepTalent <span>AI</span></h1>
+
+    <p class="subtitle">
+        Intelligent Talent Assessment & Career Recommendation
+    </p>
+
+    <div class="upload-card">
+
+        <h2>Analyze Your Talent</h2>
+
+        <form action="/analyze"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <label>Upload Your Resume</label>
+
+            <input type="file"
+                   name="resume"
+                   accept=".pdf,.docx,.txt"
+                   required>
+
+            <label>Select Target Job Role</label>
+
+            <select name="role" required>
+
+                <option value="">Choose a role</option>
+
+                <option value="Data Analyst">
+                    Data Analyst
+                </option>
+
+                <option value="Python Developer">
+                    Python Developer
+                </option>
+
+                <option value="Machine Learning Engineer">
+                    Machine Learning Engineer
+                </option>
+
+                <option value="Frontend Developer">
+                    Frontend Developer
+                </option>
+
+            </select>
+
+            <button type="submit">
+                Analyze My Profile
+            </button>
+
+        </form>
+
+    </div>
+
+    <p class="footer">
+        Powered by DeepTalent AI
+    </p>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿{
+    "Data Analyst": [
+        "python",
+        "sql",
+        "pandas",
+        "numpy",
+        "matplotlib"
+    ],
+    "Python Developer": [
+        "python",
+        "sql",
+        "flask",
+        "django"
+    ],
+    "Machine Learning Engineer": [
+        "python",
+        "machine learning",
+        "scikit-learn",
+        "pandas",
+        "numpy"
+    ],
+    "Frontend Developer": [
+        "html",
+        "css",
+        "javascript",
+        "react"
+    ]
+}
